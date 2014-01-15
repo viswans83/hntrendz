@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "hnposts", ">= 0.0.4"
   spec.add_dependency "sequel"
   spec.add_dependency "sinatra"
-  spec_add_dependency "clockwork"
+  spec.add_dependency "clockwork"
 end
