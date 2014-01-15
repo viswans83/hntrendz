@@ -1,0 +1,3 @@
+module Hntrendz
+  VERSION = "0.0.1"
+end
