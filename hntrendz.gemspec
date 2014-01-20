@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "sqlite3"
 
-  spec.add_dependency "hnposts", ">= 0.0.4"
+  spec.add_dependency "hnposts", ">= 0.0.6"
   spec.add_dependency "sequel"
   spec.add_dependency "sinatra"
   spec.add_dependency "clockwork"
