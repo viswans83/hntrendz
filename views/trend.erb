@@ -28,7 +28,7 @@
             }
           ]
         }
-        new Chart(ctx).Line(data,{scaleShowLabels: true, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 50, scaleStartValue: 0, pointDot: false});
+        new Chart(ctx).Line(data,{scaleShowLabels: true, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 50, scaleStartValue: 0});
 
         var ctx = document.getElementById("comments_trend_chart_<%= @post_id %>").getContext("2d");
         var data = {
@@ -43,7 +43,7 @@
             }
           ]
         }
-        new Chart(ctx).Line(data,{scaleShowLabels: true, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 50, scaleStartValue: 0, pointDot: false});
+        new Chart(ctx).Line(data,{scaleShowLabels: true, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 50, scaleStartValue: 0});
 
         var ctx = document.getElementById("position_trend_chart_<%= @post_id %>").getContext("2d");
         var data = {

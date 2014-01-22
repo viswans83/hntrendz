@@ -2,6 +2,9 @@ require "bundler/setup"
 require "json"
 require "sequel"
 require "sinatra"
+require "sinatra/reloader" if development?
+
+set :erb, :layout => false
 
 DB = Sequel.connect("sqlite://db/hntrendz.db")
 
@@ -53,8 +56,8 @@ def prepare_post post_id
 end
 
 get '/' do
-  erb :index, :layout => false do
-    erb :each_post, :layout => false  do |post_id|
+  erb :index do
+    erb :each_post do |post_id|
       prepare_post post_id
       erb :trend
     end
@@ -62,7 +65,7 @@ get '/' do
 end
 
 get '/:post_id' do |post_id|
-  erb :index, :layout => false do
+  erb :index do
     prepare_post post_id
     erb :trend
   end
