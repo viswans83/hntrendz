@@ -12,6 +12,10 @@ To install dependencies:
 
     $ bundle install
 
+Setup the development database:
+
+    $ sequel -m db/migrations/ sqlite://db/hntrendz.db
+
 To launch the Sinatra app:
 
     $ ruby hntrendz.rb
