@@ -1,24 +1,24 @@
 # Hntrendz
 
-Capture trending information for Hacker News
+Capture and chart trending information for Hacker News
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone this repository into a folder of your choice
 
-    gem 'hntrendz'
+    git clone https://github.com/rationalrevolt/hntrendz.git
 
-And then execute:
+To install dependencies:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
+To launch the Sinatra app:
 
-    $ gem install hntrendz
+    $ ruby hntrendz.
 
-## Usage
+To start the background process that fetches stories from Hacker News:
 
-TODO: Write usage instructions here
+    $ bundle exec clockwork lib/hntrendz/jobs/clock.rb
 
 ## Contributing
 
