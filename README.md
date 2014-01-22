@@ -6,7 +6,7 @@ Capture and chart trending information for Hacker News
 
 Clone this repository into a folder of your choice
 
-    git clone https://github.com/rationalrevolt/hntrendz.git
+    $ git clone https://github.com/rationalrevolt/hntrendz.git
 
 To install dependencies:
 
@@ -14,7 +14,7 @@ To install dependencies:
 
 To launch the Sinatra app:
 
-    $ ruby hntrendz.
+    $ ruby hntrendz.rb
 
 To start the background process that fetches stories from Hacker News:
 
