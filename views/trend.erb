@@ -1,0 +1,64 @@
+    <div>
+      <a href="<%= @url %>"><%= @title %></a>
+      <table class="table">
+        <tr>
+          <th>Points vs Time</th>
+          <th>Comments vs Time</th>
+          <th>Position vs Time</th>
+        </tr>
+        <tr>
+          <td><canvas id="points_trend_chart_<%= @post_id %>" width="300" height="200"></canvas></td>
+          <td><canvas id="comments_trend_chart_<%= @post_id %>" width="300" height="200"></canvas></td>
+          <td><canvas id="position_trend_chart_<%= @post_id %>" width="300" height="200"></canvas></td>
+        </tr>
+      </table>
+    </div>
+    <script type="text/javascript">
+      function render_chart_<%= @post_id %>() {
+        var ctx = document.getElementById("points_trend_chart_<%= @post_id %>").getContext("2d");
+        var data = {
+          labels: <%= JSON.dump(@time_stamps) %>,
+          datasets: [
+            {
+              fillColor: "rgba(196,111,89,0.5)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,1)",
+              pointStrokeColor: "#fff",
+              data: <%= JSON.dump(@points) %> 
+            }
+          ]
+        }
+        new Chart(ctx).Line(data,{scaleShowLabels: true, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 50, scaleStartValue: 0, pointDot: false});
+
+        var ctx = document.getElementById("comments_trend_chart_<%= @post_id %>").getContext("2d");
+        var data = {
+          labels: <%= JSON.dump(@time_stamps) %>,
+          datasets: [
+            {
+              fillColor: "rgba(235,196,139,0.5)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,1)",
+              pointStrokeColor: "#fff",
+              data: <%= JSON.dump(@comments) %> 
+            }
+          ]
+        }
+        new Chart(ctx).Line(data,{scaleShowLabels: true, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 50, scaleStartValue: 0, pointDot: false});
+
+        var ctx = document.getElementById("position_trend_chart_<%= @post_id %>").getContext("2d");
+        var data = {
+          labels: <%= JSON.dump(@time_stamps) %>,
+          datasets: [
+            {
+              fillColor: "rgba(240,229,155,0.5)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,1)",
+              pointStrokeColor: "#fff",
+              data: <%= JSON.dump(@positions) %> 
+            }
+          ]
+        }
+        new Chart(ctx).Line(data,{scaleShowLabels: false, scaleOverride: true, scaleSteps: 5, scaleStepWidth: 6, scaleStartValue: 0});
+      }
+      $(document).ready(render_chart_<%= @post_id %>);
+    </script>

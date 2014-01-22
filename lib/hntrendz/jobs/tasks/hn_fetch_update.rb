@@ -1,5 +1,4 @@
 require "date"
-require "set"
 require "sequel"
 require "hnposts"
 
@@ -20,7 +19,7 @@ module Hntrendz
       def execute
         self.timestamp = DateTime.now
 
-        self.posts = HNPosts.fetch_posts
+        self.posts = HNPosts.fetch_posts.select { |p| p.post_id }
         
         DB.transaction do
           insert_new_posts
@@ -68,9 +67,15 @@ module Hntrendz
       end
       
       def insert_new_posts
+        enc = Encoding.find 'ASCII'
+        enc_opts = {
+          :invalid => :replace,
+          :undef => :replace,
+          :replace => ''
+        }
         new_posts.each do |p|
           DB[:posts].insert(:id => p.post_id,
-                            :title => p.title,
+                            :title => p.title.encode(enc,enc_opts),
                             :url => p.url,
                             :track_start => timestamp)
         end unless new_posts.empty?
