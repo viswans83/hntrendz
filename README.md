@@ -2,6 +2,10 @@
 
 Capture and chart trending information for Hacker News
 
+## Screenshot
+
+![hntrendz](pics/hntrendz-001.png)
+
 ## Installation
 
 Clone this repository into a folder of your choice
