@@ -20,11 +20,11 @@
           labels: <%= JSON.dump(@time_stamps) %>,
           datasets: [
             {
-              fillColor: "rgba(196,111,89,0.5)",
+              fillColor: "rgba(0, 113, 157, .8)",
               strokeColor: "rgba(220,220,220,1)",
               pointColor: "rgba(220,220,220,1)",
               pointStrokeColor: "#fff",
-              data: <%= JSON.dump(@points) %> 
+              data: <%= JSON.dump(@points) %>
             }
           ]
         }
@@ -35,11 +35,11 @@
           labels: <%= JSON.dump(@time_stamps) %>,
           datasets: [
             {
-              fillColor: "rgba(235,196,139,0.5)",
+              fillColor: "rgba(73, 141, 0, .8)",
               strokeColor: "rgba(220,220,220,1)",
               pointColor: "rgba(220,220,220,1)",
               pointStrokeColor: "#fff",
-              data: <%= JSON.dump(@comments) %> 
+              data: <%= JSON.dump(@comments) %>
             }
           ]
         }
@@ -50,11 +50,11 @@
           labels: <%= JSON.dump(@time_stamps) %>,
           datasets: [
             {
-              fillColor: "rgba(240,229,155,0.5)",
+              fillColor: "rgba(255, 102, 0, .8)",
               strokeColor: "rgba(220,220,220,1)",
               pointColor: "rgba(220,220,220,1)",
               pointStrokeColor: "#fff",
-              data: <%= JSON.dump(@positions) %> 
+              data: <%= JSON.dump(@positions) %>
             }
           ]
         }

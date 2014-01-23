@@ -1,0 +1,23 @@
+h1{
+	text-transform: uppercase;
+	border-top: 4px #ff6600 solid;
+	display: inline-block;
+	font-family: Verdana!important;
+}
+
+.page-header{
+	text-align: center;
+	}
+
+a{
+	color: #828282;
+	font-family: Verdana!important;
+}
+
+p{
+	font-family: Verdana!important;
+}
+
+th{
+	font-family: Verdana!important;
+}
