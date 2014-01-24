@@ -6,6 +6,10 @@ Capture and chart trending information for Hacker News
 
 ![hntrendz](pics/hntrendz-001.png)
 
+## See it Online
+
+[http://apps.defsym.me/hntrendz](http://apps.defsym.me/hntrendz)
+
 ## Installation
 
 Clone this repository into a folder of your choice
